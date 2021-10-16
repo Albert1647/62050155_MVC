@@ -8,7 +8,11 @@ import vuetify from './plugins/vuetify';
 
 import axios from 'axios';
 
-
+// Plugin used
+// Vuetify -> pre-build ui component
+// store -> State Management -> store data
+// axios -> HTTP Request API
+// router -> apps router
 
 new Vue({
 	router,
