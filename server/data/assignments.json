@@ -1,0 +1,21 @@
+[
+	{
+		"assignment_name": "12345",
+		"description": "123",
+		"due_date": "2021-10-14",
+		"assign_to": [
+			{ "student_id": "1234", "is_turn_in": false, "turn_in_date": "" },
+			{ "student_id": "123", "is_turn_in": false, "turn_in_date": "" }
+		]
+	},
+	{
+		"assignment_id": 1,
+		"assignment_name": "12345",
+		"description": "123",
+		"due_date": "2021-10-14",
+		"assign_to": [
+			{ "student_id": "1234", "is_turn_in": false, "turn_in_date": "" },
+			{ "student_id": "123", "is_turn_in": false, "turn_in_date": "" }
+		]
+	}
+]

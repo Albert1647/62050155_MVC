@@ -11,9 +11,12 @@
 	</v-app>
 </template>
 
+
 <script>
 import Navigation from "@/components/navigation.vue";
 
+// views handle app interface / ui
+// can handle some form validation work before sending data to back-end
 export default {
 	name: "App",
 
@@ -22,11 +25,11 @@ export default {
 	},
 
 	data: () => ({
-
+		
 	}),
 
 	created() {
-
+		this.$store.dispatch('getAssignments')
 	},
 
 	computed: {

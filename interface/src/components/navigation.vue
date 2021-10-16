@@ -26,7 +26,7 @@
 				<v-list-item-group mandatory color="red darken-4">
 					<!-- display path list -->
 					<v-list-item
-						v-for="item in pathList"
+						v-for="item in path_list"
 						:key="item.title"
 						router
 						:to="item.path"
@@ -53,12 +53,15 @@
 <script>
 
 export default {
-	name: "Navigation",
+	name: "navigation",
 
 	data: () => ({
 		drawer: true,
-		pathList: [
-			{ title: "test", icon: "mdi-calendar", path: "/test" },
+		// app path
+		path_list: [
+			{ title: "panel", icon: "mdi-calendar", path: "/panel" },
+			{ title: "student", icon: "mdi-calendar", path: "/student" },
+			{ title: "summary", icon: "mdi-calendar", path: "/summary" }
 		],
 	}),
 
