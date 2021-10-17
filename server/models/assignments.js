@@ -64,10 +64,4 @@ module.exports = class Assignment {
 		getAssignmentsFromFile(cb);
 	}
 
-	static findById(id, cb) {
-		getAssignmentsFromFile(assignments => {
-			const assignment = assignments.find((a) => a.assignment_id === id);
-			cb(assignment);
-		});
-	}
 };

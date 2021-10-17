@@ -59,9 +59,9 @@ export default {
 		drawer: true,
 		// app path
 		path_list: [
-			{ title: "panel", icon: "mdi-calendar", path: "/panel" },
-			{ title: "student", icon: "mdi-calendar", path: "/student" },
-			{ title: "summary", icon: "mdi-calendar", path: "/summary" }
+			{ title: "panel", icon: "mdi-star", path: "/panel" },
+			{ title: "student", icon: "mdi-star", path: "/student" },
+			{ title: "summary", icon: "mdi-star", path: "/summary" }
 		],
 	}),
 
