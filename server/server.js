@@ -10,13 +10,13 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // define route
-const assignmentRoute = require('./routes/assignments');
+const productRoute = require('./routes/product');
 
 // define directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 // use route
-app.use(assignmentRoute);
+app.use(productRoute);
 
 const server_port = 3000;
 

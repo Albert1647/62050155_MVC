@@ -1,26 +1,14 @@
 <template>
 	<v-container>
-		<h1 class="page-header">Assignment Summary</h1>
-		<div class="assignment">
-            <v-card class="form" v-for="(assignment, index) in assignments" :key="index" >
-                <h3>Assignment Name: {{ assignment.assignment_name }}</h3>
-                <h3>Description :{{ assignment.description }}</h3>
-                <h3>Due: {{ assignment.due_date }}</h3>
-                <br>
-                <h3>Assing to</h3>
-                <div class="homework" v-for="(student, index) in assignment.assign_to" :key="index">
-                    <v-card 
-                        class="student-card" 
-                        :color="student.turn_in_status === 'turn in late' ? 'red lighten-4'
-                        : student.turn_in_status === 'turn in' ? 'green lighten-4'
-                        : '' " 
-                    >
-                        <p>student_id:<br>-> {{student.student_id}}</p>
-                        <p>description:<br>-> {{student.description}}</p>
-                        <p>turn_in_date:<br>-> {{student.turn_in_date}}</p>
-                        <p>turn_in_status:<br>-> {{student.turn_in_status}}</p>
-                    </v-card>
-                </div>
+		<h1 class="page-header">Products Dashboard</h1>
+		<div class="product">
+            <v-card class="form" v-for="(product, index) in sortedProduct" :key="index" >
+                <h3>Product Name: {{ product.product_name }}</h3>
+                <h3>total_core :{{ product.total_core }}</h3>
+                <h3>statistic:</h3>
+                <li class="" v-for="(product, index) in product.statistic" :key="index">
+                    {{`${index + 1}.time:${product.time} used_core: ${product.used_core}` }}
+                </li>
             </v-card>
 		</div>
 	</v-container>
@@ -31,18 +19,32 @@
 <script>
 export default {
 	data: () => ({
-        turn_in_status: null
+
 	}),
 
     computed: {
-        assignments(){
-            return this.$store.getters.assignment
-        }
+        sortedProduct(){
+            let products = this.$store.getters.products
+            // sort product used_core
+            products.forEach(product => {
+                product.statistic.sort((a, b) => {
+                    return b.used_core - a.used_core
+                })
+            })
+
+            // remove object after index 15 if statistic length > 15
+            products.forEach(product => {
+                let n = product.statistic.length > 15 ? 15 : product.statistic.length;
+                product.statistic = product.statistic.slice(0,n)
+            })
+
+            return products
+        },
     },
 
     // before render component -> get product
     created(){
-        this.$store.dispatch('getAssignment')
+        this.$store.dispatch('getProducts')
     },
 
     methods: {

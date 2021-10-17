@@ -29,10 +29,11 @@ export default {
 	}),
 
 	created() {
-		this.$store.dispatch('getAssignment')
+		this.$store.dispatch('getProducts')
 	},
 
 	computed: {
+		// display nav route name
 		currentRouteName() {
 			return this.$route.name;
 		},

@@ -1,16 +1,5 @@
-.in-time{
-    color: rgb(116, 255, 123);
-}
-.late{
-    color: rgb(255, 70, 70);
-}
-
-.homework{
-    margin: 20px;
-}
-
-.student-card{
-    padding: 20px
+li{
+    margin: 10px 0px;
 }
 
 .button{
@@ -19,10 +8,6 @@
 
 .text-field{
     margin-right: 30px;
-}
-
-.assignment {
-    margin: 16px 300px;
 }
 
 .page-header {

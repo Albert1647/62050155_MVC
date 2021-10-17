@@ -60,7 +60,6 @@ export default {
 		// app path
 		path_list: [
 			{ title: "panel", icon: "mdi-star", path: "/panel" },
-			{ title: "student", icon: "mdi-star", path: "/student" },
 			{ title: "summary", icon: "mdi-star", path: "/summary" }
 		],
 	}),

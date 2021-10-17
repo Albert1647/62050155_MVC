@@ -5,7 +5,7 @@ import store from "../store/index.js";
 
 Vue.use(VueRouter);
 
-// app route
+// define app route
 const routes = [
 	{
 		path: "/",
@@ -15,11 +15,6 @@ const routes = [
 		path: "/panel",
 		name: "panel",
 		component: () => import("../views/panel.vue"),
-	},
-	{
-		path: "/student",
-		name: "student",
-		component: () => import("../views/student.vue")
 	},
 	{
 		path: "/summary",
