@@ -29,7 +29,7 @@ export default {
 	}),
 
 	created() {
-		this.$store.dispatch('getAssignments')
+		this.$store.dispatch('getAssignment')
 	},
 
 	computed: {

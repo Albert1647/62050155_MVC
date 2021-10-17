@@ -13,4 +13,6 @@ router.get('/assignment', assignment_controller.getAllAssignment);
 
 router.post('/add-assignment', assignment_controller.addAssignment);
 
+router.put('/edit-assignment', assignment_controller.editAssignment);
+
 module.exports = router;

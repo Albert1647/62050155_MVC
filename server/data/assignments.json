@@ -1,21 +1,24 @@
 [
 	{
-		"assignment_name": "12345",
+		"assignment_id": "0.6848559900280129",
+		"assignment_name": "1234",
 		"description": "123",
-		"due_date": "2021-10-14",
+		"due_date": "2021-09-29T00:48:00.000Z",
 		"assign_to": [
-			{ "student_id": "1234", "is_turn_in": false, "turn_in_date": "" },
-			{ "student_id": "123", "is_turn_in": false, "turn_in_date": "" }
-		]
-	},
-	{
-		"assignment_id": 1,
-		"assignment_name": "12345",
-		"description": "123",
-		"due_date": "2021-10-14",
-		"assign_to": [
-			{ "student_id": "1234", "is_turn_in": false, "turn_in_date": "" },
-			{ "student_id": "123", "is_turn_in": false, "turn_in_date": "" }
+			{
+				"student_id": "1234",
+				"is_turn_in": true,
+				"turn_in_status": "turn in late",
+				"turn_in_date": "2021-10-17T01:26:50.839Z",
+				"description": "1234we"
+			},
+			{
+				"student_id": "1234",
+				"is_turn_in": false,
+				"turn_in_status": "assigned",
+				"turn_in_date": "",
+				"description": ""
+			}
 		]
 	}
 ]

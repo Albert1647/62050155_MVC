@@ -14,7 +14,7 @@
                 <h3>Description</h3>
                 <v-textarea class="text-field" v-model="description" placeholder="insert data"/>
                 <h3>date</h3>
-                <v-date-picker class="text-field" v-model="due_date" placeholder="insert data"/>
+                <input type="datetime-local" v-model="due_date"/>
                 <h3>assign to</h3>
                 <v-text-field class="text-field" v-model="student_id" placeholder="insert data" append-icon="mdi-plus" @click:append="addStudent"/>
                 <div v-if="assign_to.length > 0">
@@ -44,7 +44,6 @@ export default {
         form_is_valid: false
 	}),
 
-    // before render component -> get product
     created(){
         
     },
@@ -64,12 +63,14 @@ export default {
                 let formData = {
                     assignment_name: this.assignment_name,
                     description: this.description,
-                    due_date: this.due_date,
+                    due_date: new Date(this.due_date),
                     assign_to: this.assign_to.map(student_id => {
                         return {
                             student_id: student_id,
                             is_turn_in: false,
+                            turn_in_status: 'assigned',
                             turn_in_date: '',
+                            description: ''
                         }
                     })
                 }
