@@ -1,4 +1,4 @@
-// routes act / have behavior like 'controller' handle which process to use / apply
+// routes : define api list and its controller
 
 const path = require('path');
 

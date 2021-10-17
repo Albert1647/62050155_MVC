@@ -1,5 +1,5 @@
-// db JSON
-// app database
+// communicate between front-end and back-end (act like interface)
+
 const Assignment = require("../models/assignments");
 
 // getAllAssignment -> GET
@@ -16,7 +16,7 @@ exports.addAssignment = (req, res, next) => {
 	const due_date = req.body.due_date;
 	const assign_to = req.body.assign_to;
 	const assignment = new Assignment(
-		null,
+		null, // assign assignment_id later
 		assignment_name,
 		description,
 		due_date,

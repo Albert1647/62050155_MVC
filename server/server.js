@@ -10,17 +10,17 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // define route
-const assignment = require('./routes/assignments');
+const assignmentRoute = require('./routes/assignments');
 
-// define diectory
+// define directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 // use route
-app.use(assignment);
+app.use(assignmentRoute);
 
 const server_port = 3000;
 
 // expose server on port 3000
 app.listen(server_port);
 
-console.log("server is started")
+console.log("server is started!")

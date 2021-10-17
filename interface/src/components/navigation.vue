@@ -16,7 +16,7 @@
 				</v-avatar>
 				<!-- App Name -->
 				<v-list-item-content class="px-5" style="font-family: Arial">
-					<v-list-item-title class=""> Test </v-list-item-title>
+					<v-list-item-title class=""> MVC </v-list-item-title>
 				</v-list-item-content>
 			</v-list-item>
 

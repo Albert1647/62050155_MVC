@@ -1,29 +1,22 @@
 <template>
 	<v-container>
-		<h1 class="page-header">ชากังราวววว</h1>
+		<h1 class="page-header">Add Assignment</h1>
 		<div class="warehouse">
-			<div class="product__card" v-for="(item, index) in products" :key="index">
-				<section class="product__text">
-					<h3>{{ item.number }}</h3>
-					<h3>{{ item.countryCode }}</h3>
-				</section>
-            </div>
             <v-card class="form">
                 <h3>Assignment Name</h3>
-                <v-text-field class="text-field" v-model="assignment_name" @change="validateForm" placeholder="insert data ex. JP1000"/>
+                <v-text-field class="text-field" v-model="assignment_name" @change="validateForm" placeholder="Assignment Name..."/>
                 <h3>Description</h3>
-                <v-textarea class="text-field" v-model="description" placeholder="insert data"/>
+                <v-textarea class="text-field" v-model="description" placeholder="Description..."/>
                 <h3>date</h3>
                 <input type="datetime-local" v-model="due_date"/>
                 <h3>assign to</h3>
-                <v-text-field class="text-field" v-model="student_id" placeholder="insert data" append-icon="mdi-plus" @click:append="addStudent"/>
+                <v-text-field class="text-field" v-model="student_id" placeholder="student_id" append-icon="mdi-plus" @click:append="addStudent"/>
                 <div v-if="assign_to.length > 0">
                     <li v-for="(member, index) in assign_to" :key="index">
                         {{ member }}
                     </li>
                 </div>
                 <v-btn @click="getTextForm" > enter </v-btn>
-                <p> {{ validation }}</p>
                 <p :class="'validation-text ' + `${form_status} `"> {{ `*${form_validation_text}` }}</p>
             </v-card>
 		</div>
@@ -58,7 +51,7 @@ export default {
     methods: {
         // form handler
         getTextForm() {
-            this.form_is_valid = true
+            this.validateForm()
             if(this.form_is_valid){
                 let formData = {
                     assignment_name: this.assignment_name,
@@ -88,15 +81,19 @@ export default {
         },
         // validate form input
         validateForm() {
-            // if(this.input.length < 6){
-            //     this.form_is_valid = false
-            //     this.form_validation_text = 'Character Should Not be less than six character'
-            //     this.form_status = 'form-status__invalid'
-            // } else {
-            //     this.form_is_valid = true
-            //     this.form_validation_text = "Looks Good!"
-            //     this.form_status = 'form-status__valid'
-            // }
+            if(this.assignment_name === ''){
+                this.form_is_valid = false
+                this.form_validation_text = 'assignment name cannot be blank'
+                this.form_status = 'form-status__invalid'
+            } else if(this.assign_to.length === 0){
+                this.form_is_valid = false
+                this.form_validation_text = 'specify assigned student'
+                this.form_status = 'form-status__invalid'
+            } else {
+                this.form_is_valid = true
+                this.form_validation_text = "Looks Good!"
+                this.form_status = 'form-status__valid'
+            }
         },
     }
 };

@@ -19,7 +19,7 @@ const mutations = {
 
 // action -> define app data logic
 const actions = {
-	// get all products from db(jSON)
+    // get assignemnt => GET
 	getAssignment({ commit }) {
 		axios.get('/assignment').then(res => {
 			let assignmentList = res.data.map(assignment => {
@@ -33,27 +33,30 @@ const actions = {
 			commit('setAssignmentList', assignmentList)
 		})
 	},
-
+	// add assignment => POST
 	addAssignment({ commit }, formData) {
 		axios.post('/add-assignment', formData )
 			.then(res => {
-				
+				alert('assignment added')
 			})
 	},
 
+	// edit assignment => PUT
 	turnInAssignment({ commit }, assignment) {
 		axios.put('/edit-assignment', assignment )
 			.then(res => {
-				console.log(res)
+				alert('assignment sended')
 			})
 	},
 };
 
 // getters return requested data
 const getters = {
+	// get all assignment
 	assignment(state){
 		return state.assignment
 	},
+	// get assignment list -> assignment menu
 	assignmentList(state){
 		return state.assignmentList
 	},

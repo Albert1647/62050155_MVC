@@ -1,6 +1,6 @@
 <template>
 	<v-container>
-		<h1 class="page-header">Student</h1>
+		<h1 class="page-header">Assignment Summary</h1>
 		<div class="assignment">
             <v-card v-for="(assignment, index) in assignments" :key="index" class="form">
                 <h3>Assignment Name: {{ assignment.assignment_name }}</h3>

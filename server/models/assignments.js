@@ -1,12 +1,16 @@
+// model -> handle data-related logic
 const fs = require("fs");
 const path = require("path");
 
+// global path
 const p = path.join(
 	path.dirname(process.mainModule.filename),
 	"data",
 	"assignments.json"
 );
 
+// utility function
+// readFile -> callback
 const getAssignmentsFromFile = (cb) => {
 	fs.readFile(p, (err, fileContent) => {
 		if (err) {
