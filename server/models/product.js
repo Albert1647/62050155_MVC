@@ -36,10 +36,11 @@ module.exports = class Product {
 
 	save() {
 		getProductsFromFile(products => {
-            // if id is already exist -> update assignment
+            // if id is already exist -> update product
+			// *define but not used (no update data api)
             if(this.product_id){
                 const existingProduct = products.findIndex(
-                    prod => prod.assignment_id === this.assignment_id
+                    prod => prod.product_id === this.product_id
                 )
                 console.log(existingProduct)
                 const updateproducts = [...products];
